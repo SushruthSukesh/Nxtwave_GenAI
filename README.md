@@ -34,7 +34,7 @@
 ```mermaid
 flowchart TD
     User([👤 User / Voice Input]) -->|Speech Audio| STT[🎙️ Web Speech STT / Mic]
-    STT -->|Transcribed Text| Matcher[🧠 Semantic & Keyword Matcher]
+    STT -->newline|Transcribed Text| Matcher[🧠 Semantic & Keyword Matcher]
     
     subgraph Knowledge Base
         DefaultDB[(📦 Default FAQs)]
