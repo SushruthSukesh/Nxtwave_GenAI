@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoxGenAI — Voice FAQ Assistant</title>
+  <meta name="description" content="Intelligent Voice FAQ Assistant for NxtWave GenAI with Speech-to-Text, Text-to-Speech, and Semantic Search.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+  <div class="app-background">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-container">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="22"></line>
+              <line x1="8" y1="22" x2="16" y2="22"></line>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <h1>VoxGenAI <span class="badge-tag">NxtWave</span></h1>
+            <p class="subtitle">Voice FAQ & AI Knowledge Assistant</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <div id="status-pill" class="status-pill status-ready">
+          <span class="status-dot"></span>
+          <span id="status-text">Ready to listen</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button id="btn-toggle-faq" class="btn-icon" title="Browse Knowledge Base" aria-label="Browse FAQ Knowledge Base">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span class="btn-label">FAQs</span>
+        </button>
+        <button id="btn-open-settings" class="btn-icon" title="Voice & Audio Settings" aria-label="Voice Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+        <button id="btn-export-chat" class="btn-icon" title="Export Conversation" aria-label="Export Conversation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </button>
+        <button id="btn-clear-chat" class="btn-icon" title="Clear Chat" aria-label="Clear Chat History">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="main-layout">
+      <!-- Chat & Interactive Voice Hub -->
+      <section class="chat-section">
+        <!-- Voice Interactive Visualizer Orb Area -->
+        <div class="visualizer-hub">
+          <div class="visualizer-canvas-wrapper">
+            <canvas id="visualizer-canvas" width="360" height="180"></canvas>
+            <div id="ai-orb" class="ai-orb state-idle">
+              <div class="orb-core"></div>
+              <div class="orb-wave wave-1"></div>
+              <div class="orb-wave wave-2"></div>
+              <div class="orb-wave wave-3"></div>
+            </div>
+          </div>
+
+          <div id="live-transcript" class="live-transcript">
+            <span class="transcript-placeholder">Press the microphone or spacebar to speak a question...</span>
+          </div>
+
+          <!-- Category Quick Filter Chips -->
+          <div class="category-chips-bar" id="category-chips">
+            <button class="chip active" data-category="all">All Topics</button>
+            <button class="chip" data-category="GenAI & LLMs">GenAI & LLMs</button>
+            <button class="chip" data-category="NxtWave & Programs">NxtWave</button>
+            <button class="chip" data-category="Full Stack & AI">Full Stack & AI</button>
+            <button class="chip" data-category="Career & Roadmap">Career</button>
+            <button class="chip" data-category="Voice Bot Help">Voice Commands</button>
+          </div>
+        </div>
+
+        <!-- Chat History Stream -->
+        <div class="chat-stream-container" id="chat-stream">
+          <!-- Messages will be dynamically rendered here -->
+        </div>
+
+        <!-- Interactive Voice & Text Input Bar -->
+        <div class="input-dock-container">
+          <div class="input-dock">
+            <button id="btn-mic" class="btn-mic" title="Click to Speak (or press Spacebar)" aria-label="Toggle Microphone">
+              <div class="mic-pulse-ring"></div>
+              <svg id="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+                <line x1="8" y1="22" x2="16" y2="22"></line>
+              </svg>
+            </button>
+
+            <div class="input-field-wrapper">
+              <input type="text" id="text-input" placeholder="Ask a question about GenAI, NxtWave, or type a voice command..." autocomplete="off">
+            </div>
+
+            <button id="btn-send" class="btn-send" title="Send Question" aria-label="Send message">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <button id="btn-stop-speech" class="btn-stop-speech hidden" title="Stop Audio Playback" aria-label="Stop Voice Output">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+              </svg>
+            </button>
+          </div>
+
+          <div class="input-shortcuts-hint">
+            <span>💡 Tip: Click <strong>Mic</strong> to speak, or say <strong>"Help"</strong> for voice shortcuts</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide-over Knowledge Base Drawer -->
+      <aside id="faq-drawer" class="faq-drawer closed">
+        <div class="drawer-header">
+          <div class="drawer-title-group">
+            <h3>Knowledge Base</h3>
+            <span id="faq-count-badge" class="count-badge">0 FAQs</span>
+          </div>
+          <div class="drawer-actions">
+            <button id="btn-open-custom-faq" class="btn-secondary-sm" title="Add Custom FAQ">+ Add FAQ</button>
+            <button id="btn-close-faq" class="btn-icon-close" aria-label="Close drawer">✕</button>
+          </div>
+        </div>
+
+        <div class="drawer-search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="faq-search-input" placeholder="Search FAQs by question or keyword...">
+        </div>
+
+        <div class="faq-accordion-list" id="faq-list">
+          <!-- Populated dynamically -->
+        </div>
+      </aside>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Voice & Audio Settings</h3>
+          <button id="btn-close-settings" class="btn-icon-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="setting-group">
+            <label for="voice-select">TTS Voice</label>
+            <select id="voice-select" class="form-select"></select>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-label-row">
+              <label for="speech-rate">Speech Rate</label>
+              <span id="speech-rate-val">1.0x</span>
+            </div>
+            <input type="range" id="speech-rate" min="0.5" max="2.0" step="0.1" value="1.0" class="form-range">
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-label-row">
+              <label for="speech-pitch">Speech Pitch</label>
+              <span id="speech-pitch-val">1.0</span>
+            </div>
+            <input type="range" id="speech-pitch" min="0.5" max="1.5" step="0.1" value="1.0" class="form-range">
+          </div>
+
+          <div class="setting-group toggle-group">
+            <label for="auto-speak-toggle">Auto-speak answers aloud</label>
+            <input type="checkbox" id="auto-speak-toggle" checked class="form-toggle">
+          </div>
+
+          <div class="setting-group toggle-group">
+            <label for="continuous-stt-toggle">Continuous Voice Listening</label>
+            <input type="checkbox" id="continuous-stt-toggle" class="form-toggle">
+          </div>
+
+          <div class="setting-group toggle-group">
+            <label for="sound-effects-toggle">Microphone chime sounds</label>
+            <input type="checkbox" id="sound-effects-toggle" checked class="form-toggle">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-test-voice" class="btn-secondary">Test Voice Sample</button>
+          <button id="btn-save-settings" class="btn-primary">Save Settings</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom FAQ Modal -->
+    <div id="custom-faq-modal" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Add Custom FAQ</h3>
+          <button id="btn-close-custom-faq" class="btn-icon-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="setting-group">
+            <label for="new-faq-category">Category</label>
+            <input type="text" id="new-faq-category" placeholder="e.g. GenAI, Projects, Python" class="form-input">
+          </div>
+          <div class="setting-group">
+            <label for="new-faq-question">Question</label>
+            <input type="text" id="new-faq-question" placeholder="e.g. How do I build an AI portfolio?" class="form-input">
+          </div>
+          <div class="setting-group">
+            <label for="new-faq-answer">Answer</label>
+            <textarea id="new-faq-answer" rows="4" placeholder="Enter the full spoken answer..." class="form-textarea"></textarea>
+          </div>
+          <div class="setting-group">
+            <label for="new-faq-keywords">Keywords (comma separated)</label>
+            <input type="text" id="new-faq-keywords" placeholder="portfolio, projects, resume, showcase" class="form-input">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-cancel-custom-faq" class="btn-secondary">Cancel</button>
+          <button id="btn-save-custom-faq" class="btn-primary">Save to Knowledge Base</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="faq-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

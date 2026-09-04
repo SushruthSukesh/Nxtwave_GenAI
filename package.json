@@ -1,0 +1,21 @@
+{
+  "name": "nxtwave-voice-faq-bot",
+  "version": "1.0.0",
+  "description": "Intelligent Voice FAQ Bot for NxtWave GenAI with Speech Recognition and Voice Synthesis",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "voice-bot",
+    "faq-bot",
+    "speech-to-text",
+    "text-to-speech",
+    "genai",
+    "nxtwave",
+    "ai-assistant"
+  ],
+  "author": "Sushruth Sukesh",
+  "license": "MIT"
+}

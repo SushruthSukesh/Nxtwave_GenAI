@@ -1,0 +1,121 @@
+[
+  {
+    "id": "genai-01",
+    "category": "GenAI & LLMs",
+    "question": "What is Generative AI and how does it work?",
+    "answer": "Generative AI refers to artificial intelligence systems capable of creating new content such as text, images, code, and audio based on user prompts. They are powered by large foundation models like Transformers trained on massive datasets using deep learning techniques.",
+    "keywords": ["generative ai", "what is genai", "how genai works", "foundation models", "transformers", "deep learning"]
+  },
+  {
+    "id": "genai-02",
+    "category": "GenAI & LLMs",
+    "question": "What is Retrieval-Augmented Generation or RAG?",
+    "answer": "Retrieval-Augmented Generation (RAG) combines information retrieval with large language models. It retrieves up-to-date, domain-specific documents from a vector database and injects them into the model's context window, significantly reducing hallucinations and providing factual answers.",
+    "keywords": ["rag", "retrieval augmented generation", "vector database", "hallucination", "embeddings"]
+  },
+  {
+    "id": "genai-03",
+    "category": "GenAI & LLMs",
+    "question": "What is Prompt Engineering and why is it important?",
+    "answer": "Prompt Engineering is the practice of crafting, structuring, and refining inputs to guide LLMs toward optimal and accurate outputs. Key techniques include zero-shot, few-shot prompting, chain-of-thought (CoT), and persona constraints.",
+    "keywords": ["prompt engineering", "prompts", "few shot", "chain of thought", "system instructions"]
+  },
+  {
+    "id": "genai-04",
+    "category": "GenAI & LLMs",
+    "question": "What is the difference between Fine-Tuning and RAG?",
+    "answer": "Fine-Tuning adjusts the model's internal weights on specialized datasets to alter its tone, format, or specialized domain behavior. RAG provides external knowledge dynamically at inference time without retraining. RAG is best for dynamic knowledge, while fine-tuning is best for style, syntax, or narrow task adaptation.",
+    "keywords": ["fine tuning vs rag", "difference between fine tuning and rag", "retraining", "dynamic knowledge"]
+  },
+  {
+    "id": "genai-05",
+    "category": "GenAI & LLMs",
+    "question": "What are Vector Embeddings?",
+    "answer": "Vector Embeddings are numerical, high-dimensional vector representations of text, images, or audio where semantically similar concepts are located close to each other in vector space. They are fundamental for semantic search and RAG systems.",
+    "keywords": ["vector embeddings", "embeddings", "vector space", "cosine similarity", "semantic search"]
+  },
+  {
+    "id": "genai-06",
+    "category": "GenAI & LLMs",
+    "question": "How do AI models handle hallucinations?",
+    "answer": "Hallucinations occur when an LLM generates plausible-sounding but factually incorrect information. They can be mitigated using RAG architectures, lower temperature settings, strict system instructions, guardrails (like NeMo Guardrails), and citation verification.",
+    "keywords": ["hallucinations", "reducing hallucination", "factual accuracy", "guardrails", "temperature"]
+  },
+  {
+    "id": "nxtwave-01",
+    "category": "NxtWave & Programs",
+    "question": "What is NxtWave and its mission?",
+    "answer": "NxtWave is a revolutionary tech education initiative empowering students and professionals to build 4.0 high-growth tech careers in Full Stack, GenAI, and Data Science through hands-on, industry-ready vernacular and interactive curricula.",
+    "keywords": ["what is nxtwave", "about nxtwave", "nxtwave mission", "ccbp", "nxtwave education"]
+  },
+  {
+    "id": "nxtwave-02",
+    "category": "NxtWave & Programs",
+    "question": "What is the NxtWave GenAI curriculum?",
+    "answer": "The NxtWave GenAI curriculum covers prompt engineering, LLM application development, LangChain, vector databases (Pinecone, ChromaDB), building multi-modal AI agents, RAG pipelines, and deploying AI-powered applications to production.",
+    "keywords": ["nxtwave genai", "genai course", "curriculum", "langchain", "ai agents", "nxtwave syllabus"]
+  },
+  {
+    "id": "nxtwave-03",
+    "category": "NxtWave & Programs",
+    "question": "What placement and career support does NxtWave offer?",
+    "answer": "NxtWave provides extensive career coaching, 1-on-1 resume reviews, mock technical and HR interviews, dedicated placement drives with 1500+ hiring partners, and portfolio project guidance to ensure job readiness.",
+    "keywords": ["placement support", "hiring partners", "jobs", "career coaching", "nxtwave placements"]
+  },
+  {
+    "id": "nxtwave-04",
+    "category": "NxtWave & Programs",
+    "question": "What hands-on projects are built in the GenAI program?",
+    "answer": "Students build full-stack GenAI projects including Intelligent Voice FAQ Bots, Enterprise Knowledge Base RAG Search, Automated Code Review Assistants, Multi-Agent Research Assistants, and Custom Vision AI apps.",
+    "keywords": ["projects", "genai projects", "hands on projects", "portfolio", "capstone"]
+  },
+  {
+    "id": "tech-01",
+    "category": "Full Stack & AI",
+    "question": "How do you build a Voice FAQ Bot?",
+    "answer": "A Voice FAQ Bot combines Speech-to-Text (STT) via Web Speech API or Whisper, a Semantic Search / NLP matcher to find relevant FAQ answers, and Text-to-Speech (TTS) via Web Speech Synthesis or ElevenLabs/gTTS to speak the response aloud.",
+    "keywords": ["build voice faq bot", "how voice bot works", "speech to text", "text to speech", "stt", "tts"]
+  },
+  {
+    "id": "tech-02",
+    "category": "Full Stack & AI",
+    "question": "What is LangChain and when should I use it?",
+    "answer": "LangChain is an open-source framework designed to simplify the development of applications using Large Language Models. It provides standard abstractions for prompt templates, document loaders, vector stores, memory, and multi-step agent tool calling.",
+    "keywords": ["langchain", "what is langchain", "agent tools", "memory", "chains"]
+  },
+  {
+    "id": "tech-03",
+    "category": "Full Stack & AI",
+    "question": "What is FastAPI and why is it popular for AI backends?",
+    "answer": "FastAPI is a high-performance Python web framework for building APIs. It is asynchronous, supports automatic OpenAPI/Swagger documentation, uses Pydantic for data validation, and offers low latency ideal for LLM streaming and AI inferences.",
+    "keywords": ["fastapi", "python backend", "api development", "async python", "swagger"]
+  },
+  {
+    "id": "tech-04",
+    "category": "Full Stack & AI",
+    "question": "What are Vector Databases and which ones are most popular?",
+    "answer": "Vector Databases are specialized databases optimized for storing and indexing high-dimensional vector embeddings with rapid approximate nearest neighbor (ANN) search. Popular options include ChromaDB, Pinecone, Qdrant, Milvus, and pgvector.",
+    "keywords": ["vector databases", "chromadb", "pinecone", "qdrant", "milvus", "ann search"]
+  },
+  {
+    "id": "career-01",
+    "category": "Career & Roadmap",
+    "question": "What skills are needed to become an AI Engineer in 2026?",
+    "answer": "To become an AI Engineer, master Python, modern JavaScript/TypeScript, LLM APIs (OpenAI, Gemini, Claude), Prompt Engineering, RAG architectures, Vector DBs, LangChain/LlamaIndex, evaluation frameworks, and cloud deployment (Docker, FastAPI).",
+    "keywords": ["ai engineer roadmap", "skills for ai engineer", "how to become ai engineer", "career roadmap"]
+  },
+  {
+    "id": "career-02",
+    "category": "Career & Roadmap",
+    "question": "How can I stand out in GenAI interviews?",
+    "answer": "Highlight end-to-end deployed AI applications in your portfolio, demonstrate deep understanding of RAG chunking and hybrid search strategies, explain how you handle LLM latency and cost optimization, and showcase clean system design principles.",
+    "keywords": ["genai interview", "how to stand out", "interview tips", "portfolio tips", "system design"]
+  },
+  {
+    "id": "bot-01",
+    "category": "Voice Bot Help",
+    "question": "What voice commands can I speak to this bot?",
+    "answer": "You can speak voice commands like: 'Help' to see instructions, 'Clear chat' to clear history, 'Mute' or 'Unmute' for speech output, 'Switch theme' to toggle theme, 'List categories' to explore topics, or ask any question naturally!",
+    "keywords": ["voice commands", "bot commands", "how to use voice", "help", "commands list"]
+  }
+]
