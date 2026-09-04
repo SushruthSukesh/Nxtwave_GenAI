@@ -34,15 +34,17 @@
 ```mermaid
 flowchart TD
     User([👤 User / Voice Input]) -->|Speech Audio| STT[🎙️ Web Speech STT / Mic]
-    STT -->newline|Transcribed Text| Matcher[🧠 Semantic & Keyword Matcher]
-    
-    subgraph Knowledge Base
+    STT -->|Transcribed Text| Matcher[🧠 Semantic & Keyword Matcher]
+
+    subgraph KnowledgeBase[Knowledge Base]
         DefaultDB[(📦 Default FAQs)]
         CustomDB[(💾 LocalStorage / Custom FAQs)]
         DefaultDB <--> CustomDB
     end
-    
-    Knowledge Base -->|Candidate FAQs| Matcher
+
+    DefaultDB -->|Candidate FAQs| Matcher
+    CustomDB -->|Candidate FAQs| Matcher
+
     Matcher -->|Ranked Best Match + Confidence| Engine[⚙️ Response Engine]
     Engine -->|Spoken Response| TTS[🔊 Web Speech TTS / Pyttsx3]
     Engine -->|Message & Related Cards| UI[💻 Glassmorphism UI & Visualizer]
